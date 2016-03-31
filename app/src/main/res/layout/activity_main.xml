@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:background="@color/material_blue_grey_900"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/rel_time_switcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        >
+
+        <com.voids.ben.timemanager.TextSwitcherWrapper
+            android:id="@+id/text_switcher6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.voids.ben.timemanager.TextSwitcherWrapper
+            android:id="@+id/text_switcher5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/text_switcher6"
+            android:layout_toRightOf="@id/text_switcher6"/>
+
+        <TextView
+            android:id="@+id/time_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/text_switcher5"
+            android:layout_toRightOf="@id/text_switcher5"
+            android:text="小时"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <com.voids.ben.timemanager.TextSwitcherWrapper
+            android:id="@+id/text_switcher4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/time_hour"
+            android:layout_toRightOf="@id/time_hour"/>
+
+        <com.voids.ben.timemanager.TextSwitcherWrapper
+            android:id="@+id/text_switcher3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/text_switcher4"
+            android:layout_toRightOf="@id/text_switcher4"/>
+
+        <TextView
+            android:id="@+id/time_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/text_switcher3"
+            android:layout_toRightOf="@id/text_switcher3"
+            android:text="分"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_time_switcher"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="10dp">
+
+        <com.voids.ben.timemanager.TextSwitcherWrapper
+            android:id="@+id/text_switcher2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+
+        <com.voids.ben.timemanager.TextSwitcherWrapper
+            android:id="@+id/text_switcher1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/text_switcher2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/text_switcher1"
+            android:text="秒"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>
