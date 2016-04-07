@@ -1,16 +1,24 @@
 package com.voids.ben.timemanager;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends Activity {
 
+    @Bind(R.id.btn_push)
+    Button btnPush;
     private TextSwitcherWrapper secSingle;
     private TextSwitcherWrapper secTens;
     private TextSwitcherWrapper minSingle;
@@ -26,15 +34,22 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         init();
         initTimeManager();
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new MyTask(), 0, 1000);
 
     }
-    private void init ()
-    {
 
+    private void init() {
+        btnPush.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ButterKnifeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initTimeManager() {
@@ -65,7 +80,7 @@ public class MainActivity extends Activity {
                     timeManager.updateState();//更新状态
                     timeManager.loopTime();//进行滚动
                     progress = timeManager.getTotalTime();//保存时间
-                    Log.i("time",progress+"");
+                    Log.i("time", progress + "");
 //                    if (config.getIsScreenOn())
 //                        timeManager.Start();
 //                    else timeManager.Paused();

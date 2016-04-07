@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ButterKnifeActivity"
+            android:label="@string/title_activity_butter_knife" >
+        </activity>
     </application>
 
 </manifest>
